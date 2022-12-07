@@ -12,14 +12,14 @@
         align-items: center;
         justify-content: center;
         padding: 1.3rem;
-        margin:1px;
+        margin:0px 1px;
         width: 60px;
         font-weight: 700;
         font-size: 1.1rem;
         cursor:pointer;
         color:#fbfbfb;
         background-color: #838383;
-        border: 1px solid #636363;
+        border: 1px solid #080808;
         border-radius: 3px;
     }
     .botao:hover{
