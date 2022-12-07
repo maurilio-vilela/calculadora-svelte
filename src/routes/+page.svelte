@@ -5,7 +5,7 @@
 <main>
     
     <section class="container">
-        <p class="saida">Saída</p>
+        <span class="saida"></span>
         <Botao texto="C" />
         <Botao texto="Del" />
         <Botao texto="%" />
@@ -37,16 +37,19 @@
         flex-wrap: wrap;
         align-items: center;
         width: 15.625rem;
+        margin: 0 auto;
     }
     .saida{
         display: flex;
-        width: 13.885rem;
-        height: 3rem;
+        width: 14.3rem;
+        height: 2rem;
         padding: 0.5rem;
-        border: 1px solid #CFCFCF;
+        border: 1px solid #9ec5ff;
         margin:0px;
-        font-size: 2rem;
+        font-size: 1.9rem;
         justify-content: flex-end;
         align-items: center;
+        border-radius: 5px;
+        margin-bottom: 4px;
     }
 </style>
