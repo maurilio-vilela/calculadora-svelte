@@ -2,9 +2,12 @@
     export let texto: string;
     export let duplo: boolean = false;
     export let operacao: boolean = false;
+    export let onClick: (valor: string) => void = () =>{}
 </script>
 
-<button class="botao" class:duplo class:operacao>
+<button class="botao" 
+    on:click={() => onClick(texto)}
+    class:duplo class:operacao>
     {texto}
 </button>
 

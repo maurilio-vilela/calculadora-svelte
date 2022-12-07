@@ -1,27 +1,32 @@
 <script lang="ts">
+    import CalculatorModel from "../model/CalculatorModel";
     import Botao from "./Botao.svelte";
     import Display from "./Display.svelte";
+    let calc = new CalculatorModel()
+    const numberTyped = (num: string) => calc = calc.numberTyped(num)
+    const ponitTyped = () => calc = calc.ponitTyped()
+    const clearDisplay = () => calc = calc.clearDisplay()
 </script>
 <div class="calculadora">
-    <Display valor=""/>
-    <Botao texto="C" />
+    <Display valor={calc.value}/>
+    <Botao onClick={clearDisplay} texto="C" />
     <Botao texto="Del" />
     <Botao texto="%" />
     <Botao operacao texto="/" />
-    <Botao texto="7" />
-    <Botao texto="8" />
-    <Botao texto="9" />
+    <Botao onClick={numberTyped} texto="7" />
+    <Botao onClick={numberTyped} texto="8" />
+    <Botao onClick={numberTyped} texto="9" />
     <Botao operacao texto="*" />
-    <Botao texto="4" />
-    <Botao texto="5" />
-    <Botao texto="6" />
+    <Botao onClick={numberTyped} texto="4" />
+    <Botao onClick={numberTyped} texto="5" />
+    <Botao onClick={numberTyped} texto="6" />
     <Botao operacao texto="-" />
-    <Botao texto="1" />
-    <Botao texto="2" />
-    <Botao texto="3" />
+    <Botao onClick={numberTyped} texto="1" />
+    <Botao onClick={numberTyped} texto="2" />
+    <Botao onClick={numberTyped} texto="3" />
     <Botao operacao texto="+" />
-    <Botao duplo texto="0" />
-    <Botao texto="," />
+    <Botao onClick={numberTyped} duplo texto="0" />
+    <Botao onClick={ponitTyped} texto="," />
     <Botao texto="=" />
 </div>
 <style>
@@ -36,18 +41,5 @@
         padding: 10px;
         background-color: #413f3e;
         border-radius: 5px;
-    }
-    .saida{
-        display: flex;
-        flex-basis: 100%;
-        height: 2rem;
-        padding: 0.5rem;
-        border: 1px solid #9ec5ff;
-        margin:0px;
-        font-size: 1.9rem;
-        justify-content: flex-end;
-        align-items: center;
-        border-radius: 5px;
-        margin-bottom: 4px;
     }
 </style>
