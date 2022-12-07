@@ -1,0 +1,20 @@
+<script lang="ts">
+    export let texto: string;
+</script>
+
+<button class="botao">
+    {texto}
+</button>
+
+<style>
+    .botao {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        margin:0px;
+        margin:0px;
+        width: 60px;
+        font-weight: 700;
+    }
+</style>
