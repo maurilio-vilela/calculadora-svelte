@@ -1,38 +1,16 @@
-# create-svelte
+# Calculadora Svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Calculadora criada com o Svelte, que não se considera Biblioteca ou Framework, mas um compilador que pega o código criado e compila em javascript puro.
 
-## Creating a project
+## Clonando projeto
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Se você deseja clonar este projeto svelte como um novo app, basta seguir estes passos abaixo:
 
 ```bash
+# criando um novo projeto com base neste repositório
+npx digit maurilio-vilela/calculadora-svelte my-app
+cd my-app
+npm install
+
+# para rodar execute no terminal
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
