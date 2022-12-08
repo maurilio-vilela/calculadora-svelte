@@ -5,7 +5,7 @@
     <Calculadora />
 </main>
 <style>
-    body{ background-color: #5e5e5e; }
+    :global(body{ background-color: #5e5e5e; })
     main{
         display: flex;
         justify-content: center;

@@ -1,12 +1,12 @@
 const NAO_LIMPAR_TELA = false;
-
+const LIMPA_TELA = true;
 export default class CalculatorModel{
     #value: string
     #accumulate: number
     #operation: string
     #clearDisplay: boolean
 
-    constructor(value: string = null, accumulate: number = null, operation: string = null, clearDisplay: boolean = false) {
+    constructor(value: string = null, accumulate: number = null, operation: string = null, clearDisplay = false) {
         this.#value = value;
         this.#accumulate = accumulate;
         this.#operation = operation;
@@ -16,7 +16,6 @@ export default class CalculatorModel{
     get value(){
         return this.#value?.replace('.', ',') || '0'
     }
-
     numberTyped(newValue: string){
         return new CalculatorModel(
             (this.#clearDisplay || !this.#value) ? newValue : this.#value + newValue,
@@ -35,5 +34,20 @@ export default class CalculatorModel{
     }
     clearDisplay(){
         return new CalculatorModel()
+    }    
+    operationTyped(nextOperation: string){
+        return this.calculate(nextOperation)
+    }
+    calculate(nextOperation: string = null){
+        const accumulate = !this.#operation
+            ? parseFloat(this.#value)
+            : eval(`${this.#accumulate} ${this.#operation} ${this.#value}`)
+        const value = !this.#operation ? this.#value : `${accumulate}`
+        return new CalculatorModel(
+            value,
+            accumulate,
+            nextOperation,
+            nextOperation ? LIMPA_TELA : NAO_LIMPAR_TELA
+        )
     }
 }
