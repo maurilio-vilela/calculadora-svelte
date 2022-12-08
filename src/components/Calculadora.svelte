@@ -4,6 +4,7 @@
     import Display from "./Display.svelte";
     let calc = new CalculatorModel();
     const numberTyped = (num: string) => calc = calc.numberTyped(num);
+    const deleteNumber = () => calc = calc.deleteNumber();
     const operationTyped = (op: string) => calc = calc.operationTyped(op);
     const ponitTyped = () => calc = calc.ponitTyped();
     const calculate = () => calc = calc.calculate();
@@ -11,9 +12,8 @@
 </script>
 <div class="calculadora">
     <Display valor={calc.value}/>
-    <Botao onClick={clearDisplay} texto="C" />
-    <Botao texto="Del" />
-    <Botao onClick={operationTyped} texto="%" />
+    <Botao onClick={clearDisplay} duplo texto="C" />
+    <Botao onClick={deleteNumber} texto="Del" />
     <Botao onClick={operationTyped} operacao texto="/" />
     <Botao onClick={numberTyped} texto="7" />
     <Botao onClick={numberTyped} texto="8" />

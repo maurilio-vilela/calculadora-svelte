@@ -34,7 +34,16 @@ export default class CalculatorModel{
     }
     clearDisplay(){
         return new CalculatorModel()
-    }    
+    }
+    
+    deleteNumber(){
+        return new CalculatorModel(
+            this.#value ? this.#value.substring(0, this.#value.length -1) : undefined,
+            this.#accumulate,
+            this.#operation,
+            NAO_LIMPAR_TELA
+        )
+    }
     operationTyped(nextOperation: string){
         return this.calculate(nextOperation)
     }
